@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سیستم حسابداری شخصی</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IRANSans:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-calculator"></i>
+                <span>حسابداری من</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="منوی ناوبری">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active" data-page="home">صفحه اصلی</a></li>
+                <li><a href="#login" class="nav-link" data-page="login">ورود</a></li>
+                <li><a href="#dashboard" class="nav-link" data-page="dashboard">داشبورد</a></li>
+                <li><a href="#invoices" class="nav-link" data-page="invoices">فاکتورها</a></li>
+                <li><a href="#expenses" class="nav-link" data-page="expenses">هزینه‌ها</a></li>
+                <li><a href="#products" class="nav-link" data-page="products">محصولات</a></li>
+                <li><a href="#clients" class="nav-link" data-page="clients">مشتریان</a></li>
+                <li><a href="#reports" class="nav-link" data-page="reports">گزارش‌ها</a></li>
+                <li><a href="#settings" class="nav-link" data-page="settings">تنظیمات</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="offline-indicator" id="offlineIndicator">
+                    <i class="fas fa-wifi"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#home" class="mobile-nav-item" data-page="home">
+            <i class="fas fa-home"></i>
+            <span>خانه</span>
+        </a>
+        <a href="#invoices" class="mobile-nav-item" data-page="invoices">
+            <i class="fas fa-file-invoice"></i>
+            <span>فاکتورها</span>
+        </a>
+        <a href="#expenses" class="mobile-nav-item" data-page="expenses">
+            <i class="fas fa-money-bill-wave"></i>
+            <span>هزینه‌ها</span>
+        </a>
+        <a href="#reports" class="mobile-nav-item" data-page="reports">
+            <i class="fas fa-chart-bar"></i>
+            <span>گزارش‌ها</span>
+        </a>
+        <a href="#settings" class="mobile-nav-item" data-page="settings">
+            <i class="fas fa-cog"></i>
+            <span>تنظیمات</span>
+        </a>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="main-content" id="mainContent">
+        
+        <!-- Landing Page -->
+        <section id="page-home" class="page active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">سیستم حسابداری شخصی شما</h1>
+                    <p class="hero-subtitle">مدیریت کامل مالی کسب‌وکارتان در یک پلتفرم</p>
+                    <div class="hero-actions">
+                        <a href="#signup" class="btn btn-primary" data-page="signup">شروع رایگان</a>
+                        <a href="#login" class="btn btn-secondary" data-page="login">ورود</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-graphic">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h2 class="section-title">ویژگی‌های اصلی</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3>مدیریت فاکتور</h3>
+                        <p>ایجاد و مدیریت فاکتورها به صورت حرفه‌ای</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>گزارش‌های تحلیلی</h3>
+                        <p>گزارش‌های جامع و نمودارهای تحلیلی</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>مدیریت مشتریان</h3>
+                        <p>سازماندهی اطلاعات مشتریان و مخاطبین</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>دسترسی آفلاین</h3>
+                        <p>کار با سیستم حتی بدون اتصال به اینترنت</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>چند ارزی</h3>
+                        <p>پشتیبانی از ارزهای مختلف (افغانی، ریال، دلار، یورو)</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>امنیت بالا</h3>
+                        <p>حفاظت از اطلاعات مالی شما</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-section">
+                <h2 class="section-title">نظرات کاربران</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"بهترین سیستم حسابداری که تا به حال استفاده کرده‌ام. رابط کاربری عالی و کار با آن بسیار ساده است."</p>
+                        <div class="testimonial-author">
+                            <strong>احمد محمدی</strong>
+                            <span>مدیر فروشگاه</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"گزارش‌های دقیق و نمودارهای تحلیلی به من کمک زیادی کرده‌اند. حتماً به دیگران هم پیشنهاد می‌کنم."</p>
+                        <div class="testimonial-author">
+                            <strong>فاطمه احمدی</strong>
+                            <span>کارآفرین</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"قابلیت کار آفلاین برای من که همیشه به اینترنت دسترسی ندارم، بسیار مفید بوده است."</p>
+                        <div class="testimonial-author">
+                            <strong>علی رضایی</strong>
+                            <span>مشاور مالی</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section id="page-login" class="page">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>ورود به حساب کاربری</h2>
+                        <p>خوش آمدید! لطفاً وارد حساب کاربری خود شوید</p>
+                    </div>
+                    <form class="auth-form" id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">ایمیل یا شماره موبایل</label>
+                            <input type="text" id="loginEmail" name="email" required>
+                            <span class="form-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">رمز عبور</label>
+                            <input type="password" id="loginPassword" name="password" required>
+                            <span class="form-error"></span>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="remember">
+                                <span>مرا به خاطر بسپار</span>
+                            </label>
+                            <a href="#" class="forgot-link">رمز عبور را فراموش کرده‌اید؟</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">ورود</button>
+                        <div class="auth-divider">
+                            <span>یا</span>
+                        </div>
+                        <a href="#signup" class="btn btn-secondary btn-block" data-page="signup">ایجاد حساب جدید</a>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signup Page -->
+        <section id="page-signup" class="page">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>ایجاد حساب کاربری</h2>
+                        <p>برای شروع، حساب کاربری خود را ایجاد کنید</p>
+                    </div>
+                    <form class="auth-form" id="signupForm">
+                        <div class="form-group">
+                            <label for="signupName">نام و نام خانوادگی</label>
+                            <input type="text" id="signupName" name="name" required>
+                            <span class="form-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">ایمیل</label>
+                            <input type="email" id="signupEmail" name="email" required>
+                            <span class="form-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPhone">شماره موبایل</label>
+                            <input type="tel" id="signupPhone" name="phone" required>
+                            <span class="form-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">رمز عبور</label>
+                            <input type="password" id="signupPassword" name="password" required minlength="6">
+                            <span class="form-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPasswordConfirm">تکرار رمز عبور</label>
+                            <input type="password" id="signupPasswordConfirm" name="passwordConfirm" required>
+                            <span class="form-error"></span>
+                        </div>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="terms" required>
+                            <span>قوانین و مقررات را می‌پذیرم</span>
+                        </label>
+                        <button type="submit" class="btn btn-primary btn-block">ثبت‌نام</button>
+                        <div class="auth-divider">
+                            <span>یا</span>
+                        </div>
+                        <a href="#login" class="btn btn-secondary btn-block" data-page="login">قبلاً ثبت‌نام کرده‌اید؟ ورود</a>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Onboarding Wizard -->
+        <section id="page-onboarding" class="page">
+            <div class="onboarding-container">
+                <div class="onboarding-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="onboardingProgress"></div>
+                    </div>
+                    <div class="progress-steps">
+                        <div class="progress-step active" data-step="1">
+                            <span class="step-number">1</span>
+                            <span class="step-label">اطلاعات اولیه</span>
+                        </div>
+                        <div class="progress-step" data-step="2">
+                            <span class="step-number">2</span>
+                            <span class="step-label">تنظیمات مالی</span>
+                        </div>
+                        <div class="progress-step" data-step="3">
+                            <span class="step-number">3</span>
+                            <span class="step-label">تکمیل</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="onboarding-content">
+                    <!-- Step 1 -->
+                    <div class="onboarding-step active" data-step="1">
+                        <h2>خوش آمدید!</h2>
+                        <p>بیایید اطلاعات اولیه کسب‌وکارتان را تنظیم کنیم</p>
+                        <form class="onboarding-form">
+                            <div class="form-group">
+                                <label for="businessName">نام کسب‌وکار</label>
+                                <input type="text" id="businessName" name="businessName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="businessType">نوع کسب‌وکار</label>
+                                <select id="businessType" name="businessType" required>
+                                    <option value="">انتخاب کنید</option>
+                                    <option value="retail">فروشگاهی</option>
+                                    <option value="service">خدماتی</option>
+                                    <option value="manufacturing">تولیدی</option>
+                                    <option value="other">سایر</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="businessPhone">شماره تماس</label>
+                                <input type="tel" id="businessPhone" name="businessPhone" required>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="onboarding-step" data-step="2">
+                        <h2>تنظیمات مالی</h2>
+                        <p>ارز اصلی و تنظیمات مالی خود را انتخاب کنید</p>
+                        <form class="onboarding-form">
+                            <div class="form-group">
+                                <label for="defaultCurrency">ارز اصلی</label>
+                                <select id="defaultCurrency" name="defaultCurrency" required>
+                                    <option value="AFN">افغانی (AFN)</option>
+                                    <option value="IRR">ریال ایران (IRR)</option>
+                                    <option value="USD">دلار (USD)</option>
+                                    <option value="EUR">یورو (EUR)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fiscalYear">سال مالی</label>
+                                <input type="text" id="fiscalYear" name="fiscalYear" placeholder="1403" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="taxRate">نرخ مالیات (%)</label>
+                                <input type="number" id="taxRate" name="taxRate" min="0" max="100" value="0">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="onboarding-step" data-step="3">
+                        <h2>تکمیل شد!</h2>
+                        <p>حساب کاربری شما آماده است. می‌توانید شروع کنید.</p>
+                        <div class="onboarding-success">
+                            <i class="fas fa-check-circle"></i>
+                            <p>همه چیز آماده است!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="onboarding-actions">
+                    <button class="btn btn-secondary" id="onboardingPrev" style="display: none;">قبلی</button>
+                    <button class="btn btn-primary" id="onboardingNext">بعدی</button>
+                    <button class="btn btn-primary" id="onboardingFinish" style="display: none;">شروع</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Page -->
+        <section id="page-dashboard" class="page">
+            <div class="page-header">
+                <h1>داشبورد</h1>
+                <div class="page-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        فاکتور جدید
+                    </button>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon income">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>درآمد این ماه</h3>
+                        <p class="stat-value" id="monthlyIncome">۲,۵۰۰,۰۰۰</p>
+                        <span class="stat-change positive">+۱۲٪ نسبت به ماه قبل</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon expense">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>هزینه این ماه</h3>
+                        <p class="stat-value" id="monthlyExpense">۸۰۰,۰۰۰</p>
+                        <span class="stat-change negative">-۵٪ نسبت به ماه قبل</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon profit">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>سود خالص</h3>
+                        <p class="stat-value" id="netProfit">۱,۷۰۰,۰۰۰</p>
+                        <span class="stat-change positive">+۱۸٪ نسبت به ماه قبل</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon invoices">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>فاکتورهای پرداخت نشده</h3>
+                        <p class="stat-value" id="pendingInvoices">۱۲</p>
+                        <span class="stat-change">مبلغ: ۵۰۰,۰۰۰</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card chart-card">
+                    <div class="card-header">
+                        <h3>نمودار درآمد و هزینه</h3>
+                        <select class="chart-period" id="chartPeriod">
+                            <option value="week">هفته</option>
+                            <option value="month" selected>ماه</option>
+                            <option value="year">سال</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="incomeExpenseChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>آخرین تراکنش‌ها</h3>
+                        <a href="#invoices" class="link" data-page="invoices">مشاهده همه</a>
+                    </div>
+                    <div class="transactions-list" id="recentTransactions">
+                        <!-- Transactions will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>دسته‌بندی هزینه‌ها</h3>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="expenseCategoryChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>وضعیت مالی</h3>
+                    </div>
+                    <div class="financial-status">
+                        <div class="status-item">
+                            <span class="status-label">موجودی نقدی</span>
+                            <span class="status-value">۳,۲۰۰,۰۰۰</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">دریافتنی‌ها</span>
+                            <span class="status-value">۵۰۰,۰۰۰</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">پرداختنی‌ها</span>
+                            <span class="status-value">۳۰۰,۰۰۰</span>
+                        </div>
+                        <div class="status-item total">
+                            <span class="status-label">کل دارایی</span>
+                            <span class="status-value">۳,۴۰۰,۰۰۰</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Invoices Page -->
+        <section id="page-invoices" class="page">
+            <div class="page-header">
+                <h1>فاکتورها</h1>
+                <div class="page-actions">
+                    <button class="btn btn-icon" id="filterBtn">
+                        <i class="fas fa-filter"></i>
+                    </button>
+                    <button class="btn btn-primary" id="newInvoiceBtn">
+                        <i class="fas fa-plus"></i>
+                        فاکتور جدید
+                    </button>
+                </div>
+            </div>
+
+            <div class="filters-bar" id="filtersBar" style="display: none;">
+                <div class="filter-group">
+                    <label>وضعیت</label>
+                    <select id="filterStatus">
+                        <option value="">همه</option>
+                        <option value="paid">پرداخت شده</option>
+                        <option value="pending">در انتظار</option>
+                        <option value="overdue">معوق</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>از تاریخ</label>
+                    <input type="text" id="filterDateFrom" class="date-input" placeholder="انتخاب تاریخ">
+                </div>
+                <div class="filter-group">
+                    <label>تا تاریخ</label>
+                    <input type="text" id="filterDateTo" class="date-input" placeholder="انتخاب تاریخ">
+                </div>
+                <button class="btn btn-secondary" id="applyFilters">اعمال فیلتر</button>
+            </div>
+
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="invoiceSearch" placeholder="جستجوی فاکتور...">
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>شماره فاکتور</th>
+                            <th>مشتری</th>
+                            <th>تاریخ</th>
+                            <th>مبلغ</th>
+                            <th>وضعیت</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoicesTableBody">
+                        <!-- Invoices will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination" id="invoicesPagination">
+                <!-- Pagination will be generated here -->
+            </div>
+        </section>
+
+        <!-- Expenses Page -->
+        <section id="page-expenses" class="page">
+            <div class="page-header">
+                <h1>هزینه‌ها</h1>
+                <div class="page-actions">
+                    <button class="btn btn-primary" id="newExpenseBtn">
+                        <i class="fas fa-plus"></i>
+                        هزینه جدید
+                    </button>
+                </div>
+            </div>
+
+            <div class="expenses-summary">
+                <div class="summary-card">
+                    <h3>کل هزینه این ماه</h3>
+                    <p class="summary-value">۸۰۰,۰۰۰</p>
+                </div>
+                <div class="summary-card">
+                    <h3>میانگین روزانه</h3>
+                    <p class="summary-value">۲۶,۶۶۷</p>
+                </div>
+                <div class="summary-card">
+                    <h3>بیشترین دسته</h3>
+                    <p class="summary-value">خرید مواد اولیه</p>
+                </div>
+            </div>
+
+            <div class="expenses-categories">
+                <h3>دسته‌بندی هزینه‌ها</h3>
+                <div class="categories-grid" id="expenseCategories">
+                    <!-- Categories will be loaded here -->
+                </div>
+            </div>
+
+            <div class="expenses-list">
+                <div class="list-header">
+                    <h3>لیست هزینه‌ها</h3>
+                    <div class="list-filters">
+                        <select id="expenseCategoryFilter">
+                            <option value="">همه دسته‌ها</option>
+                        </select>
+                        <select id="expenseMonthFilter">
+                            <option value="">همه ماه‌ها</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="expenses-items" id="expensesList">
+                    <!-- Expenses will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Products & Services Page -->
+        <section id="page-products" class="page">
+            <div class="page-header">
+                <h1>محصولات و خدمات</h1>
+                <div class="page-actions">
+                    <button class="btn btn-primary" id="newProductBtn">
+                        <i class="fas fa-plus"></i>
+                        افزودن محصول
+                    </button>
+                </div>
+            </div>
+
+            <div class="products-tabs">
+                <button class="tab-btn active" data-tab="products">محصولات</button>
+                <button class="tab-btn" data-tab="services">خدمات</button>
+            </div>
+
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="productSearch" placeholder="جستجوی محصول یا خدمت...">
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Clients Page -->
+        <section id="page-clients" class="page">
+            <div class="page-header">
+                <h1>مشتریان</h1>
+                <div class="page-actions">
+                    <button class="btn btn-primary" id="newClientBtn">
+                        <i class="fas fa-plus"></i>
+                        افزودن مشتری
+                    </button>
+                </div>
+            </div>
+
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="clientSearch" placeholder="جستجوی مشتری...">
+            </div>
+
+            <div class="clients-grid" id="clientsGrid">
+                <!-- Clients will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Reports Page -->
+        <section id="page-reports" class="page">
+            <div class="page-header">
+                <h1>گزارش‌ها</h1>
+                <div class="page-actions">
+                    <button class="btn btn-secondary" id="exportReportBtn">
+                        <i class="fas fa-download"></i>
+                        خروجی PDF
+                    </button>
+                </div>
+            </div>
+
+            <div class="reports-filters">
+                <div class="filter-group">
+                    <label>نوع گزارش</label>
+                    <select id="reportType">
+                        <option value="income">گزارش درآمد</option>
+                        <option value="expense">گزارش هزینه</option>
+                        <option value="profit">گزارش سود و زیان</option>
+                        <option value="tax">گزارش مالیاتی</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>از تاریخ</label>
+                    <input type="text" id="reportDateFrom" class="date-input" placeholder="انتخاب تاریخ">
+                </div>
+                <div class="filter-group">
+                    <label>تا تاریخ</label>
+                    <input type="text" id="reportDateTo" class="date-input" placeholder="انتخاب تاریخ">
+                </div>
+                <button class="btn btn-primary" id="generateReportBtn">تولید گزارش</button>
+            </div>
+
+            <div class="reports-content" id="reportsContent">
+                <div class="report-summary">
+                    <div class="summary-item">
+                        <h4>کل درآمد</h4>
+                        <p>۵,۰۰۰,۰۰۰</p>
+                    </div>
+                    <div class="summary-item">
+                        <h4>کل هزینه</h4>
+                        <p>۲,۰۰۰,۰۰۰</p>
+                    </div>
+                    <div class="summary-item">
+                        <h4>سود خالص</h4>
+                        <p>۳,۰۰۰,۰۰۰</p>
+                    </div>
+                </div>
+
+                <div class="report-charts">
+                    <div class="chart-card">
+                        <h3>نمودار درآمد</h3>
+                        <canvas id="incomeChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>نمودار هزینه</h3>
+                        <canvas id="expenseChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="report-table">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>تاریخ</th>
+                                <th>شرح</th>
+                                <th>درآمد</th>
+                                <th>هزینه</th>
+                                <th>مانده</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reportTableBody">
+                            <!-- Report data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings Page -->
+        <section id="page-settings" class="page">
+            <div class="page-header">
+                <h1>تنظیمات</h1>
+            </div>
+
+            <div class="settings-container">
+                <div class="settings-section">
+                    <h3>تنظیمات عمومی</h3>
+                    <div class="settings-group">
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>تم تاریک</label>
+                                <span>استفاده از تم تاریک برای راحتی چشم</span>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="darkModeToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>اعلان‌ها</label>
+                                <span>دریافت اعلان برای رویدادهای مهم</span>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="notificationsToggle" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>تنظیمات مالی</h3>
+                    <div class="settings-group">
+                        <div class="setting-item">
+                            <label>ارز پیش‌فرض</label>
+                            <select id="defaultCurrencySetting">
+                                <option value="AFN">افغانی (AFN)</option>
+                                <option value="IRR">ریال ایران (IRR)</option>
+                                <option value="USD">دلار (USD)</option>
+                                <option value="EUR">یورو (EUR)</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label>سال مالی</label>
+                            <input type="text" id="fiscalYearSetting" placeholder="1403">
+                        </div>
+                        <div class="setting-item">
+                            <label>نرخ مالیات (%)</label>
+                            <input type="number" id="taxRateSetting" min="0" max="100" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>اطلاعات کسب‌وکار</h3>
+                    <form class="settings-form" id="businessInfoForm">
+                        <div class="form-group">
+                            <label>نام کسب‌وکار</label>
+                            <input type="text" id="businessNameSetting" required>
+                        </div>
+                        <div class="form-group">
+                            <label>شماره تماس</label>
+                            <input type="tel" id="businessPhoneSetting" required>
+                        </div>
+                        <div class="form-group">
+                            <label>آدرس</label>
+                            <textarea id="businessAddressSetting" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">ذخیره تغییرات</button>
+                    </form>
+                </div>
+
+                <div class="settings-section">
+                    <h3>حساب کاربری</h3>
+                    <div class="settings-group">
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>نام</label>
+                                <span>احمد محمدی</span>
+                            </div>
+                            <button class="btn btn-secondary btn-sm">تغییر</button>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>ایمیل</label>
+                                <span>ahmad@example.com</span>
+                            </div>
+                            <button class="btn btn-secondary btn-sm">تغییر</button>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>رمز عبور</label>
+                                <span>••••••••</span>
+                            </div>
+                            <button class="btn btn-secondary btn-sm">تغییر</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section danger">
+                    <h3>منطقه خطر</h3>
+                    <div class="settings-group">
+                        <button class="btn btn-danger">حذف حساب کاربری</button>
+                        <button class="btn btn-danger">پاک کردن تمام داده‌ها</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <div class="modal" id="invoiceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>فاکتور جدید</h2>
+                <button class="modal-close" id="closeInvoiceModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="modal-form" id="invoiceForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>مشتری</label>
+                        <select id="invoiceClient" required>
+                            <option value="">انتخاب مشتری</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>تاریخ</label>
+                        <input type="text" id="invoiceDate" class="date-input" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>آیتم‌ها</label>
+                    <div class="invoice-items" id="invoiceItems">
+                        <div class="invoice-item">
+                            <input type="text" placeholder="نام محصول/خدمت" class="item-name">
+                            <input type="number" placeholder="تعداد" class="item-quantity" min="1" value="1">
+                            <input type="number" placeholder="قیمت واحد" class="item-price" min="0">
+                            <button type="button" class="btn btn-icon btn-danger remove-item">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-secondary" id="addInvoiceItem">
+                        <i class="fas fa-plus"></i> افزودن آیتم
+                    </button>
+                </div>
+                <div class="invoice-total">
+                    <div class="total-row">
+                        <span>جمع کل:</span>
+                        <span id="invoiceSubtotal">۰</span>
+                    </div>
+                    <div class="total-row">
+                        <span>مالیات:</span>
+                        <span id="invoiceTax">۰</span>
+                    </div>
+                    <div class="total-row total">
+                        <span>مبلغ نهایی:</span>
+                        <span id="invoiceTotal">۰</span>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelInvoice">انصراف</button>
+                    <button type="submit" class="btn btn-primary">ذخیره</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="expenseModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>هزینه جدید</h2>
+                <button class="modal-close" id="closeExpenseModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="modal-form" id="expenseForm">
+                <div class="form-group">
+                    <label>دسته‌بندی</label>
+                    <select id="expenseCategory" required>
+                        <option value="">انتخاب دسته</option>
+                        <option value="supplies">خرید مواد اولیه</option>
+                        <option value="rent">اجاره</option>
+                        <option value="utilities">قبض‌ها</option>
+                        <option value="salary">حقوق</option>
+                        <option value="marketing">بازاریابی</option>
+                        <option value="other">سایر</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>مبلغ</label>
+                    <input type="number" id="expenseAmount" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label>تاریخ</label>
+                    <input type="text" id="expenseDate" class="date-input" required>
+                </div>
+                <div class="form-group">
+                    <label>شرح</label>
+                    <textarea id="expenseDescription" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelExpense">انصراف</button>
+                    <button type="submit" class="btn btn-primary">ذخیره</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading Skeleton -->
+    <div class="skeleton-loader" id="skeletonLoader" style="display: none;">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
